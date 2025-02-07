@@ -1,7 +1,8 @@
 # Mobile Demo Automation
 
 ## Visão Geral
-Este projeto é um framework de testes automatizados para aplicativos móveis usando WebdriverIO, Mocha e Appium. Ele foi projetado para rodar testes localmente ou no BrowserStack, com suporte para marcações (tags), estrutura baseada em Page Objects e definições de etapas (Steps).
+Este projeto é um framework de testes automatizados para aplicativos móveis usando ## WebdriverIO, Mocha, JavaScript, Node.js, Allure Reports, BrowserStack, GitHub Actions  e Appium. ## Ele foi projetado para rodar testes localmente ou no BrowserStack, com suporte para marcações (tags), estrutura baseada em Page Objects e definições de etapas (Steps).
+App demonstração do WebdriverIO.
 
 ## Recursos
 - **Estrutura Modular**: Organizado usando o modelo Page Object (POM) e definições de etapas.
@@ -23,16 +24,24 @@ Este projeto é um framework de testes automatizados para aplicativos móveis us
 ├── package.json     # Dependências e scripts do projeto
 ```
 
+## Clonar o repositório
+```sh
+git clone https://github.com/tiagoparanhos/mobile-demo-automation.git
+```
+
 ## Instalação
 Certifique-se de ter o **Node.js** instalado e execute:
-# Instalar dependências do projeto
+```sh
 npm install
+```
 
-**Crie uma conta no BrowserStack** 
-Para preencher as variavéis de ambiente no arquivo .env: 
+**Crie uma conta no BrowserStack - Preencher as variavéis de ambiente no arquivo .env: ** 
 
 ```sh
-BROWSERSTACK_USER || BROWSERSTACK_KEY || BROWSERSTACK_APP_ID
+BROWSERSTACK_USER="user"
+BROWSERSTACK_KEY="senha"  
+BROWSERSTACK_ANDROID_APP_ID="app_android_id"
+BROWSERSTACK_IOS_APP_ID="app_ios_id"
 ```
 
 ## ✅ Executando Testes

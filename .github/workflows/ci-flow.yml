@@ -1,0 +1,63 @@
+name: Demo Mobile Automation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    environment: browser
+
+    steps:
+      - name: Code Validate
+        uses: actions/checkout@v4
+
+      - name: Config Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Definir permissões para Appium
+        run: chmod +x ./node_modules/.bin/appium
+
+      - name: Fazer upload do APK para o BrowserStack (Android)
+        env:
+          BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
+          BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+        run: |
+          response=$(curl -u "$BROWSERSTACK_USERNAME:$BROWSERSTACK_ACCESS_KEY" \
+            -X POST "https://api-cloud.browserstack.com/app-automate/upload" \
+            -F "file=@app/app-demo.apk")
+          app_id=$(echo $response | jq -r '.app_url')
+          echo "ANDROID_APP_ID=$app_id" >> $GITHUB_ENV
+
+      - name: Fazer upload do IPA para o BrowserStack (iOS)
+        env:
+          BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
+          BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+        run: |
+          response=$(curl -u "$BROWSERSTACK_USERNAME:$BROWSERSTACK_ACCESS_KEY" \
+            -X POST "https://api-cloud.browserstack.com/app-automate/upload" \
+            -F "file=@app/app-demo.ipa")
+          app_id=$(echo $response | jq -r '.app_url')
+          echo "IOS_APP_ID=$app_id" >> $GITHUB_ENV
+
+      - name: Executar todos os testes
+        run: npm run test:all
+
+      - name: Executar testes com tags específicas
+        run: npm run test:tag "@smoke"
+
+      - name: Gerar relatório Allure
+        run: npm run allure:generate
+
+      - name: Fazer upload do relatório Allure para o GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          branch: gh-pages
+          folder: allure-report

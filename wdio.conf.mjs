@@ -64,7 +64,7 @@ export const config = {
             'appium:platformVersion': '12.0',
             'appium:automationName': 'UiAutomator2',
              platformName: 'android',
-            'appium:app': process.env.BROWSERSTACK_APP_ID,
+            'appium:app': process.env.BROWSERSTACK_ANDROID_APP_ID,
             'appium:appPackage': 'com.wdiodemoapp',
             'appium:autoGrantPermissions': true,
             'appium:browserstack.debug': true,
@@ -73,7 +73,19 @@ export const config = {
                 buildName: 'Build Principal',
                 userName: process.env.BROWSERSTACK_USER,
                 accessKey: process.env.BROWSERSTACK_KEY
-            }
-        },
+            },
+        
+            platformName: 'ios',
+            'appium:deviceName': 'iPhone 14 Pro Max',
+            'appium:platformVersion': '16',
+            'appium:automationName': 'XCUITest',
+            'appium:app': process.env.BROWSERSTACK_IOS_APP_ID,
+            'bstack:options': {
+              projectName: 'ios',
+              buildName: 'Build Principal',
+              userName: process.env.BROWSERSTACK_USER,
+              accessKey: process.env.BROWSERSTACK_KEY
+            },
+        }
     ]
 };
