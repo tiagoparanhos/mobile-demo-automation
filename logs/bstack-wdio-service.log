@@ -1,0 +1,29 @@
+[90m2025-02-07T04:34:53.272Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m Sending SDK event with data {
+  userName: '[REDACTED]',
+  accessKey: '[REDACTED]',
+  event_type: 'SDKTestAttempted',
+  detectedFramework: 'WebdriverIO-mocha',
+  event_properties: {
+    language_framework: 'WebdriverIO_mocha',
+    referrer: 'WebdriverIO-mocha/9.7.3',
+    language: 'WebdriverIO',
+    languageVersion: 'v20.18.0',
+    buildName: 'Build Principal',
+    buildIdentifier: 'undefined',
+    os: 'Windows_NT',
+    hostname: 'Tiger',
+    productMap: {
+      observability: true,
+      accessibility: false,
+      percy: false,
+      automate: true,
+      app_automate: false
+    },
+    product: [ 'observability', 'automate' ]
+  }
+}
+[90m2025-02-07T04:34:53.728Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m Funnel Event Response: "{\"message\":\"SDK Event recorded successfully\"}"
+[90m2025-02-07T04:34:53.728Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m Funnel event success
+[90m2025-02-07T04:34:53.728Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m app is not defined in browserstack-service config, skipping ...
+[90m2025-02-07T04:34:53.729Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m Sending launch start event
+[90m2025-02-07T04:34:54.598Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m [Start_Build] Success response: {"observability":{"success":true,"options":{"allow_screenshots":true},"code":null,"errors":null,"error_trace_id":null},"accessibility":null,"automate":{"success":true,"options":{"allow_screenshots":true},"code":null,"errors":null,"error_trace_id":null},"build_hashed_id":"czbi0bgvsaivnb60xdw8tqhnjupu5ue0vsnchnuc","jwt":"eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJicm93c2Vyc3RhY2tfb2IiLCJzdWIiOiI5Mzk2NjIxIiwiZ3JvdXBfaWQiOjkzMDc3MTksInVzZXJfaWQiOjkzOTY2MjEsImJ1aWxkX2hhc2hlZF9pZCI6ImN6YmkwYmd2c2Fpdm5iNjB4ZHc4dHFobmp1cHU1dWUwdnNuY2hudWMiLCJwcm9qZWN0X25hbWUiOiJNZXUgUHJvamV0byIsImhvb2tfYXNfdGVzdCI6IjEiLCJidWlsZF9uYW1lIjoiQnVpbGQgUHJpbmNpcGFsIiwicHJvZHVjdF9tYXAiOiJ7XCJvYnNlcnZhYmlsaXR5XCI6dHJ1ZSxcImF1dG9tYXRlXCI6dHJ1ZSxcIm9yaWdpbkZyb21Qcm9kdWN0TWFwXCI6XCJBdXRvbWF0ZVwiLFwiYnN0YWNrQXV0b21hdGlvblwiOnRydWUsXCJwcm9kdWN0RmlsdGVyU291cmNlXCI6dHJ1ZSxcImNhZFwiOnRydWV9IiwiZ3JyX3JlZ2lvbiI6IiIsInNpZ25pbmdfa2V5X2hhc2giOiI3ZGY2ZTY4M2M2NzA5MWI2YmNhYjQ5NWUzZjdmMmFhMTY5Yzc1ZjMxZmJhZmE1MGY0NzAyNGM4MWI5ZTcwNTNkIiwiaWF0IjoxNzM4OTAyOTAwLCJleHAiOjE3MzkyNDg1MDB9.0xm33uIl8PNwQ-IHYRLZawVn25xe3t5HcCXDtCp1RRg","discard_build":null,"app_automate":null}
