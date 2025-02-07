@@ -8,7 +8,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    environment: browser
+    environment: browserstack
 
     steps:
       - name: Code Validate
@@ -25,10 +25,10 @@ jobs:
       - name: Definir permissões para Appium
         run: chmod +x ./node_modules/.bin/appium
 
-      - name: Fazer upload do APK para o BrowserStack (Android)
+      - name: Upload o BrowserStack (Android)
         env:
-          BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
-          BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+          BROWSERSTACK_USER: ${{ secrets.BROWSERSTACK_USER }}
+          BROWSERSTACK_KEY: ${{ secrets.BROWSERSTACK_KEY }}
         run: |
           response=$(curl -u "$BROWSERSTACK_USERNAME:$BROWSERSTACK_ACCESS_KEY" \
             -X POST "https://api-cloud.browserstack.com/app-automate/upload" \
@@ -38,8 +38,8 @@ jobs:
 
       - name: Fazer upload do IPA para o BrowserStack (iOS)
         env:
-          BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
-          BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+          BROWSERSTACK_USER: ${{ secrets.BROWSERSTACK_USER }}
+          BROWSERSTACK_KEY: ${{ secrets.BROWSERSTACK_KEY }}
         run: |
           response=$(curl -u "$BROWSERSTACK_USERNAME:$BROWSERSTACK_ACCESS_KEY" \
             -X POST "https://api-cloud.browserstack.com/app-automate/upload" \
@@ -50,14 +50,6 @@ jobs:
       - name: Executar todos os testes
         run: npm run test:all
 
-      - name: Executar testes com tags específicas
-        run: npm run test:tag "@smoke"
-
-      - name: Gerar relatório Allure
-        run: npm run allure:generate
-
-      - name: Fazer upload do relatório Allure para o GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
         with:
           branch: gh-pages
           folder: allure-report
