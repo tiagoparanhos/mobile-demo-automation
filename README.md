@@ -1,7 +1,9 @@
 # Mobile Demo Automation
 
 ## Visão Geral
-Este projeto é um framework de testes automatizados para aplicativos móveis usando ## WebdriverIO, Mocha, JavaScript, Node.js, Allure Reports, BrowserStack, GitHub Actions  e Appium. ## Ele foi projetado para rodar testes localmente ou no BrowserStack, com suporte para marcações (tags), estrutura baseada em Page Objects e definições de etapas (Steps).
+Este projeto é um framework de testes automatizados para aplicativos móveis usando :
+## WebdriverIO, Mocha, JavaScript, Node.js, Allure Reports, BrowserStack, GitHub Actions  e Appium. ## 
+Ele foi projetado para rodar testes localmente ou no BrowserStack, com suporte para marcações (tags), estrutura baseada em Page Objects e definições de etapas (Steps).
 App demonstração do WebdriverIO.
 
 ## Recursos
