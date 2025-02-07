@@ -4,11 +4,9 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import moduleAlias from 'module-alias';
 
-// Obtendo o diretório atual
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Adicionando alias
 moduleAlias.addAliases({
     '@steps': join(__dirname, './tests/steps'),
     '@page': join(__dirname, './page'),
@@ -28,7 +26,6 @@ export const config = {
         require('module-alias/register');
     },
     before: function (capabilities, specs) {
-        // Coloque o código que depende do objeto `browser` aqui
         console.log('O browser está pronto para ser usado.');
     },
     afterTest: async function (specs, context, { error }) {
