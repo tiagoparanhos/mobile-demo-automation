@@ -52,7 +52,7 @@ BROWSERSTACK_IOS_APP_ID="app_ios_id"
 npm run test:all
 ```
 
-### Rodar Testes por Tag
+### ✅ Rodar Testes por Tag
 ```sh
 npm run test:tag "@smoke"
 ```
@@ -61,7 +61,7 @@ Para múltiplas tags:
 npm run test:tag "@smoke|@critical"
 ```
 
-### Gerar e Visualizar Relatórios
+### ✅ Gerar e Visualizar Relatórios
 ```sh
 allure generate allure-results --clean
 allure open
